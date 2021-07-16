@@ -30,6 +30,7 @@ app.post("/api/notes", function (req, res) {
 
 //Read Note
 app.get("/api/notes", function (err, res) {
+  if (err) {throw err;}
   notedata = fs.readFileSync("db/db.json", "utf8");
   console.log("Read Notes Working");
   notedata = JSON.parse(notedata);
